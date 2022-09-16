@@ -1,14 +1,15 @@
 from employee import Employee
+from dialog import Dialog
 
 def main():
     print("Welcome to the payslip generator!")
 
-    fname = input("\nPlease input your name: ")
-    lname = input("Please input your surname: ")
-    income = int(input("Please enter your annual salary: "))
-    super = int(input("Please enter your super rate: "))
-    paymentS = input("Please enter your payment start date: ")
-    paymentE = input("Please enter your payment end date: ")
+    fname = Dialog.getAlphaString("Please input your name: ")
+    lname = Dialog.getAlphaString("Please input your surname: ")
+    income = Dialog.getSalary()
+    super = Dialog.getSuper()
+    paymentS = Dialog.getPaymentDate()
+    paymentE = Dialog.getPaymentDate()
 
     bundy = Employee(fname, lname, income, super, paymentS, paymentE)
     print("\nYour payslip has been generated:\n")
