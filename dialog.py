@@ -15,29 +15,22 @@ class Dialog:
     def getSalary():
         validSalary = False
         while not validSalary:
-            try: 
-                salary = int(input("Please enter your annual salary: "))
-                if salary >= 5000 and salary <= 2000000:
-                    validSalary = True
-                    return salary
-                else: 
-                    print('You must enter a salary between 5 thousand and 2 million')
-
-            except ValueError:
-                print('You must enter an integer')
+            salary = input("Please enter your annual salary: ")
+            if salary.isdigit():
+                validSalary = True
+                return int(salary)
+            else: 
+                print('you must enter an integer')
 
     def getSuper():
         validSuper = False
         while not validSuper:
-            try:
-                super = int(input("Please enter your super rate: "))
-                if super >= 1 and super <= 100:
-                    validSuper = True
-                    return super
-                else: print('You must enter a super rate between 1 and 100')
+            super = int(input("Please enter your super rate: "))
+            if super >= 1 and super <= 100:
+                validSuper = True
+                return super
+            else: print('You must enter a super rate between 1 and 100')
 
-            except ValueError:
-                print('You must enter an integer')
                 
     
     def getPaymentDate():
